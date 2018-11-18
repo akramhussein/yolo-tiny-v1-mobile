@@ -11,4 +11,8 @@ WORKDIR /src/notebooks
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
+
+RUN apt-get update && \
+    apt-get install libgl1-mesa-glx -y
+
 ENTRYPOINT ["/entrypoint.sh"]
